@@ -11,7 +11,7 @@ searchBtn.addEventListener('click', async() =>{
     data.then(function(response){
         const weather = new WeatherDetails(response.resolvedAddress, response.days, response.currentConditions)
         console.log(response.resolvedAddress)
-        console.log(weather.days[0].description);
+        console.log(weather);
         buildWeatherContent(weather);
     });
 })
