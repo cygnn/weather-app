@@ -6,11 +6,15 @@
     <title>Document</title>
 </head>
 <body>
-    <div class="content">
+    <header>
+        <h1>Weather App</h1>
         <div class="search-bar">
-            <input type="text" id="search">
-            <button id="search-btn">search</button>
+            <input type="text" id="search" placeholder="ex. Cebu City">
+            <button id="search-btn">Search</button>
         </div>
+        <p class="loadingDialogBox"></p>
+    </header>
+    <div class="content">
         <div class="weather-content">
         </div>
     </div>

@@ -1,6 +1,7 @@
 const { buildWeatherContent } = require("./js/buildWeatherContent");
 const { getData } = require("./js/getData");
 const { WeatherDetails } = require("./js/weatherDetails");
+import './styles.css'   
 
 const search = document.querySelector('#search');
 const searchBtn = document.querySelector('#search-btn')

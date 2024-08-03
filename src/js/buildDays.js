@@ -6,12 +6,14 @@ export function buildDays(data){
     const days = 7;
     
     const dayWrapper = document.createElement('div');
+    dayWrapper.classList.add('day-wrapper');
     for(let i = 0; i <= days; i++){
         const images = importAll(require.context('../icons', false, /\.(png|jpe?g|svg)$/));
         const dayCard = document.createElement('div');
         dayCard.classList.add('day-card');
 
         const dateContent = document.createElement('div');
+        dateContent.classList.add('date-content');
 
         const dayOfWeek = document.createElement('p')
         dayOfWeek.classList.add('day')
@@ -23,6 +25,7 @@ export function buildDays(data){
         }
 
         const date = document.createElement('p');
+        date.classList.add('date');
         date.textContent = format(data[i].datetime, "M/d")
 
         dateContent.appendChild(dayOfWeek);
