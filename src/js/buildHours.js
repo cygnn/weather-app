@@ -5,6 +5,12 @@ export function buildHours(hours){
     const hourWrapper = document.createElement('div');
     hourWrapper.classList.add('hour-wrapper');
 
+
+    const titleContainer = document.createElement('div');
+    titleContainer.classList.add('title-container');
+    titleContainer.textContent = 'Hourly Forecast';
+
+    hourWrapper.appendChild(titleContainer);
     hours.forEach(hour => {
         const hourCard = document.createElement('div');
         hourCard.classList.add('hour-card');

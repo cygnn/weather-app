@@ -15,6 +15,10 @@ header{
     text-align: center;
 }
 
+.loadingDialogBox{
+    padding-right: 8.5rem;
+}
+
 .content{
     width: 100%;
     height: 100%;
@@ -27,33 +31,104 @@ header{
 }
 
 .current-weather-wrapper{
+    display: flex;
+    flex-direction: column;
     grid-column: 1/3;
     text-align: center;
+    margin: 0 1rem;
+    border-radius: 1rem;
+    background-color:rgb(147, 215, 215);
+}
+
+.title-container{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    padding: 1rem;
+    border-bottom: 1px solid rgb(128, 128, 128);
+    align-items: center;
+}
+
+.curr-weather-body{
+    display: flex;
+    flex-grow: 1;
+    align-items: center;
+    padding: 1.5rem;
+}
+
+.curr-weather-details{
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.temp1{
+    font-size: 10rem;
+    font-weight: bold;
+}
+
+.feels-like{
+    font-size: 2rem;
+    opacity: 70%;
+    font-weight: 700;
+}
+
+.curr-weather-details img {
+    width: 5rem;
+    height: 5rem;
+}
+
+.address{
+    max-width: 50%;
+}
+
+.resolved-address{
+    font-size: 2.5rem;
+    font-weight: bold;
+}
+
+.day-today{
+    font-size: 1.5rem;
+    font-weight: 700;
+    opacity: 60%;
 }
 
 .day-wrapper{
+    background-color:rgb(147, 215, 215);
     display: flex;
     flex-direction: column;
     grid-column: 3/5;
     height: 30rem;
     overflow-y: scroll;
-    padding: 1rem;
+    /* padding: 1rem; */
     margin: 0 1rem;
+    border-radius: 1rem;
 }
 
 .hour-wrapper{
     display: grid;
     grid-auto-flow: column;
     grid-auto-columns: max-content;
-    grid-column: 2/4;
-    /* width: 100%; */
+    grid-column: 1/5;
+    grid-template-rows: 0.3fr 1fr;
     overflow-x: scroll;
     gap: 1rem;
+    margin: 1rem;
+    background-color:rgb(147, 215, 215);
+    border-radius: 1rem;
+}
+
+.hour-wrapper .title-container{
+    grid-row: 1;
+    grid-column: 1 / 25;
 }
 
 .day-card{
     display: flex;
     width: 100%;
+    padding: 1rem;
+    /* justify-content: space-between; */
 }
 
 .date-content{
@@ -61,7 +136,7 @@ header{
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    width: 3rem;
+    width: 6rem;
     
 }
 
@@ -69,8 +144,8 @@ header{
     display: flex;
     align-items: center;
     width: 12rem;
-    margin-left: auto;
-    margin-right: 1.5rem
+    /* margin-left: auto; */
+    /* margin-right: 1.5rem */
 }
 
 .temp-hi{
@@ -87,6 +162,7 @@ header{
     display: flex;
     flex-direction: column;
     justify-content: center;
+    padding-left: 1rem;
     /* margin-left: auto; */
 }
 
@@ -103,6 +179,8 @@ header{
     align-items: center;
     justify-content: center;
     width: 5rem;
+    margin: 0 1rem;
+    padding-bottom: 0.3rem;
 }
 
 .hour-card img {

@@ -7,6 +7,15 @@ export function buildDays(data){
     
     const dayWrapper = document.createElement('div');
     dayWrapper.classList.add('day-wrapper');
+
+    const titleContainer = document.createElement('div');
+    titleContainer.classList.add('title-container');
+    
+    const h2 = document.createElement('h2');
+    h2.textContent = '7 day Weather Forecast'
+
+    titleContainer.appendChild(h2);
+    dayWrapper.appendChild(titleContainer);
     for(let i = 0; i <= days; i++){
         const images = importAll(require.context('../icons', false, /\.(png|jpe?g|svg)$/));
         const dayCard = document.createElement('div');

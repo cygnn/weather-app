@@ -1,4 +1,5 @@
 import { convertTime } from "./convTime";
+import { format } from "date-fns";
 function importAll(r) {
     let images = {};
     r.keys().map((item, index) => { images[item.replace('./', '')] = r(item); });
@@ -15,13 +16,28 @@ export function buildCurrWeather(data){
     title.textContent = 'Current Weather';
 
     const time = document.createElement('p');
-    time.textContent = convertTime(data.currentConditions.datetime);
+    time.textContent = "as of " + convertTime(data.currentConditions.datetime);
 
     titleContainer.appendChild(title);
     titleContainer.appendChild(time);
 
     const currWeatherBody = document.createElement('div');
     currWeatherBody.classList.add('curr-weather-body');
+
+    const addressBody = document.createElement('div');
+    addressBody.classList.add('address')
+
+    const resolvedAddress = document.createElement('div')
+    resolvedAddress.classList.add('resolved-address')
+    resolvedAddress.textContent = data.address
+
+    const day = document.createElement('div');
+    day.classList.add('day-today');
+    // console.log(data.days[0].datetime);
+    day.textContent = format(data.days[0].datetime, 'EEEE');
+
+    addressBody.appendChild(resolvedAddress)
+    addressBody.appendChild(day);
 
     const currWeatherDetails = document.createElement('div');
     currWeatherDetails.classList.add('curr-weather-details');
@@ -35,9 +51,11 @@ export function buildCurrWeather(data){
     tempContainer.classList.add('temp-container');
     
     const temp = document.createElement('div');
+    temp.classList.add('temp1');
     temp.textContent = data.currentConditions.temp + "°C"
 
     const feelslike = document.createElement('div');
+    feelslike.classList.add('feels-like');
     feelslike.textContent = "Feels like " + data.currentConditions.feelslike + "°C";
 
     tempContainer.appendChild(temp);
@@ -47,11 +65,13 @@ export function buildCurrWeather(data){
     condition.classList.add('condition');
     condition.textContent = data.currentConditions.conditions;
 
-    currWeatherDetails.appendChild(img);
     currWeatherDetails.appendChild(tempContainer);
+    currWeatherDetails.appendChild(img);
     currWeatherDetails.appendChild(condition);
 
+    currWeatherBody.appendChild(addressBody);
     currWeatherBody.appendChild(currWeatherDetails);
+    
 
     currWeatherWrap.appendChild(titleContainer);
     currWeatherWrap.appendChild(currWeatherBody);
