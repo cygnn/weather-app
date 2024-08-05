@@ -48,11 +48,11 @@ export function buildDays(data){
 
         const tempHi = document.createElement('span');
         tempHi.classList.add('temp-hi');
-        tempHi.textContent = data[i].tempmax + "°C";
+        tempHi.textContent = data[i].tempmax + "°";
 
         const tempLow = document.createElement('span');
         tempLow.classList.add('temp-low');
-        tempLow.textContent = data[i].tempmin + "°C";
+        tempLow.textContent = data[i].tempmin + "°";
 
         tempWrapper.appendChild(img);
         tempWrapper.appendChild(tempHi);

@@ -5,6 +5,9 @@ import { buildHours } from "./buildHours";
 export function buildWeatherContent(data){
     const content = document.querySelector('.weather-content');
 
+    while(content.firstChild){
+        content.firstChild.remove();
+    }
     
 
     content.appendChild(buildCurrWeather(data));

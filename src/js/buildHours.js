@@ -8,7 +8,11 @@ export function buildHours(hours){
 
     const titleContainer = document.createElement('div');
     titleContainer.classList.add('title-container');
-    titleContainer.textContent = 'Hourly Forecast';
+    
+    const h2 = document.createElement('h2')
+    h2.textContent='Hourly Forecast';
+
+    titleContainer.appendChild(h2);
 
     hourWrapper.appendChild(titleContainer);
     hours.forEach(hour => {
